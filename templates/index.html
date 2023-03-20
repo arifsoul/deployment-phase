@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Classification</title>
+  </head>
+  <body>
+    <h1>Image Classification</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <input type="file" name="image">
+      <button type="submit">Submit</button>
+    </form>
+    <div id="results"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $('form').submit(function(event) {
+        event.preventDefault();
+        var formData = new FormData($('form')[0]);
+        $.ajax({
+          url: '/predict',
+          type: 'POST',
+          data: formData,
+          contentType: false,
+          processData: false,
+          success: function(response) {
+            $('#results').html('<p>Predicted class: ' + response.class_name + '</p><p>Class probabilities: ' + JSON.stringify(response.class_probs) + '</p>');
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

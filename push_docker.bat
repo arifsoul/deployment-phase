@@ -1,0 +1,1 @@
+docker push arifsoul/image_classification_pytorch:image-classification-pytorch
