@@ -10,5 +10,12 @@ https://drive.google.com/file/d/1-2zFVoH03q9pZTgoLPugnWvkyoy3BhFw/view?usp=shari
 
 Simpan model tersebut pada folder model
 
+## Deployment
+
+Jalankan docker
+
+```bash
+  docker pull arifsoul/image_classification_pytorch
+```
 
 
