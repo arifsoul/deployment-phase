@@ -14,7 +14,7 @@ conn = psycopg2.connect(
 
 
 # Load model
-model = torch.load(r'D:\tes AI\deployment-phase\model\model.pt')
+model = torch.load('model/model.pt')
 
 # Define Flask app
 app = Flask(__name__)
