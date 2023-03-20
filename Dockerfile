@@ -8,7 +8,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install dependencies
-RUN pip install -r requirements.txt
+RUN pip --timeout=999 install -r requirements.txt
 
 # Copy application files
 COPY . .
