@@ -1,7 +1,7 @@
 
 # Image Classification 
 
-Proyek klasifikasi gambar menggunakan pytorch
+Aplikasi Flask ini digunakan untuk melakukan prediksi kelas gambar menggunakan model PyTorch dan menyimpan hasil prediksi ke dalam database PostgreSQL.
 
 # Dependensi
 - Flask
@@ -9,6 +9,18 @@ Proyek klasifikasi gambar menggunakan pytorch
 - torchvision
 - Pillow
 - psycopg2
+
+# Konfigurasi Database PostgreSQL
+Aplikasi ini memerlukan koneksi ke database PostgreSQL untuk menyimpan hasil prediksi. Pastikan Anda telah menginstal PostgreSQL dan memiliki database yang telah dibuat sebelum menjalankan aplikasi. Berikut adalah konfigurasi database PostgreSQL yang perlu diubah pada file app.py:
+```bash
+conn = psycopg2.connect(
+host="localhost",  # ganti dengan nama host PostgreSQL
+database="ai_dev",  # ganti dengan nama database PostgreSQL
+user="postgres",  # ganti dengan nama user PostgreSQL
+password="superuserpwd"  # ganti dengan password user PostgreSQL
+)
+```
+Silakan ganti nilai dari parameter host, database, user, dan password sesuai dengan konfigurasi database PostgreSQL yang telah Anda buat.
 
 # Cara Menjalankan Kode
 - Instal dependensi dengan menjalankan perintah pip install -r requirements.txt.
